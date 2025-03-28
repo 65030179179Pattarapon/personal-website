@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Clock</title>
+  <link rel="stylesheet" href="/style/js-style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar animate-fade">
+    <div class="logo">Kampong</div>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/js-page.html" class="active">JavaScript Project</a></li>
+      <li><a href="/cv.html">ข้อมูลส่วนตัว</a></li>
+    </ul>
+  </nav>
+
+  <!-- Clock Header -->
+  <header class="animate-slide-up">🕒 Smart Clock</header>
+
+  <!-- Analog & Digital Clocks -->
+  <div class="clock-section animate-scale-in">
+    <div class="analog">
+      <canvas id="analogClock" width="400" height="400"></canvas>
+    </div>
+    <div class="digital">
+      <div id="digitalClock">00:00:00</div>
+    </div>
+  </div>
+
+  <!-- Clock Features -->
+  <div class="controls">
+    <section class="animate-fade-delay">
+      <h3>⏱ Stopwatch</h3>
+      <div id="stopwatch">00:00:00</div>
+      <button onclick="startStopwatch()">Start</button>
+      <button onclick="pauseStopwatch()">Pause</button>
+      <button onclick="resetStopwatch()">Reset</button>
+    </section>
+
+    <section class="animate-fade-delay2">
+      <h3>⏳ Countdown</h3>
+      <input type="number" id="countdownInput" placeholder="Seconds">
+      <div id="countdown">00:00</div>
+      <button onclick="startCountdown()">Start Countdown</button>
+    </section>
+
+    <section class="animate-fade-delay3">
+      <h3>⏰ Alarm</h3>
+      <input type="time" id="alarmTime">
+      <button onclick="setAlarm()">Set Alarm</button>
+      <div id="alarmStatus">Alarm Off</div>
+    </section>
+  </div>
+
+  <!-- Alarm Sound -->
+  <audio id="alarmSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+
+  <script src="/script/js-clock.js"></script>
+</body>
+</html>

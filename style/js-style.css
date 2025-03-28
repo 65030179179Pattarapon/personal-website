@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #fff;
+    color: #1d1d1f;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #d2d2d7;
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #1d1d1f;
+    font-weight: 500;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: #0071e3;
+  }
+  
+  /* Header */
+  header {
+    background-color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  /* Clock Section */
+  .clock-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
+  }
+  
+  canvas {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  
+  .digital {
+    font-size: 2rem;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  /* Controls */
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    padding: 2rem;
+    margin: auto;
+  }
+  
+  .controls section {
+    border-top: 1px solid #d2d2d7;
+    padding-top: 1rem;
+  }
+  
+  label, input, button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #0071e3;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #005bb5;
+  }
+  
+  input[type="number"],
+  input[type="time"] {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Responsive */
+  @media (min-width: 768px) {
+    .clock-section {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .controls {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .controls section {
+      flex: 1;
+      min-width: 250px;
+    }
+  
+    .digital {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      font-size: 1.25rem;
+      padding: 1rem;
+    }
+  
+    .digital {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      font-size: 0.95rem;
+      padding: 0.6rem 1rem;
+    }
+  
+    input[type="number"],
+    input[type="time"] {
+      font-size: 0.95rem;
+    }
+  
+    .controls,
+    .clock-section {
+      padding: 1rem;
+    }
+  }
+  
+  /* ---------------- ANIMATION ---------------- */
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Animation Utility Classes */
+  .animate-fade {
+    animation: fade-in 1s ease-out both;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 1s ease-out both;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 1s ease-out both;
+  }
+  
+  .animate-fade-delay {
+    animation: fade-in 1s ease-out both;
+    animation-delay: 0.3s;
+  }
+  
+  .animate-fade-delay2 {
+    animation: fade-in 1s ease-out both;
+    animation-delay: 0.6s;
+  }
+  
+  .animate-fade-delay3 {
+    animation: fade-in 1s ease-out both;
+    animation-delay: 0.9s;
+  }
+  
